@@ -8,7 +8,7 @@ export default function Home() {
       <div className="my-4">
         <h1 className="text-2xl md:text-4xl font-bold text-center">Rick and Morty TekBees Test</h1>
       </div>
-      <div className="md:m-4">
+      <div className="md:m-4 mx-2">
         <Characters />
       </div>
     </main>
