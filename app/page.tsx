@@ -13,7 +13,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
         Rick and Morty TekBees Test
       </h1>
 
-      <Filters search={search} status={status} gender={gender} />
+      <div className="w-full p-4">
+        <Filters search={search} status={status} gender={gender} />
+      </div>
 
       <div className="md:m-4 mx-2">
         <Characters search={search} status={status} gender={gender} />
