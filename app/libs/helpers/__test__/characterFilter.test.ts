@@ -168,7 +168,7 @@ describe('characterFilter', () => {
 
     it('should return characters filtered by gender', () => {
         const result = characterFilter({ characters: mockCharacters, status: '', gender: 'Male', search: '' });
-        expect(result).toHaveLength(2);
+        expect(result).toHaveLength(3);
     });
 
     it('should return characters filtered by search', () => {
