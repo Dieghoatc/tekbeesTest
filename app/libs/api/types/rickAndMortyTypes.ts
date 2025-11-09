@@ -1,4 +1,4 @@
-export interface RickandmortyapiTypes {
+export interface ApiResponse {
     info:    Info;
     results: Result[];
 }

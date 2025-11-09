@@ -1,8 +1,4 @@
-import { cache } from "react";
-
-export const getCharacters = cache(async () => {
-  const response = await fetch(
-    "https://rickandmortyapi.com/api/character/?page=1"
-  )
-  return response.json();
-});
+export async function getCharacters(page: number = 1) {
+  const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
+  return res.json();
+}
