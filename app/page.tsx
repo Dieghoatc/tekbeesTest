@@ -1,15 +1,22 @@
+import { Characters } from "./sections/Characters";
+import { Filters } from "./components/Filters";
 
-import { Characters } from "./components/Characters";
-
-export default function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ search: string; status: string; gender: string }> }) {
+  const searchParamsResolved = await searchParams;
+  const search = searchParamsResolved.search ?? "";
+  const status = searchParamsResolved.status ?? "";
+  const gender = searchParamsResolved.gender ?? "";
 
   return (
     <main className="w-full md:w-[1024px] mx-auto">
-      <div className="my-4">
-        <h1 className="text-2xl md:text-4xl font-bold text-center">Rick and Morty TekBees Test</h1>
-      </div>
+      <h1 className="text-2xl md:text-4xl font-bold text-center my-4">
+        Rick and Morty TekBees Test
+      </h1>
+
+      <Filters search={search} status={status} gender={gender} />
+
       <div className="md:m-4 mx-2">
-        <Characters />
+        <Characters search={search} status={status} gender={gender} />
       </div>
     </main>
   );

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { Suspense } from 'react';
-import { Characters } from '../Characters';
+import { Characters } from '../../sections/Characters';
 import { getCharacters } from '../../libs/api/service/getCharacters';
 
 jest.mock('../../libs/api/service/getCharacters');
@@ -88,7 +88,7 @@ describe('Characters', () => {
     mockGetCharacters.mockResolvedValueOnce(mockData);
 
     // Render the async component directly
-    const component = await Characters();
+    const component = await Characters({ search: '', status: '', gender: '' });
     render(component);
 
     expect(mockGetCharacters).toHaveBeenCalledTimes(1);
@@ -141,7 +141,7 @@ describe('Characters', () => {
     // Render with Suspense boundary
     render(
       <Suspense fallback={<div>Loading...</div>}>
-        <Characters />
+        <Characters search="" status="" gender="" />
       </Suspense>
     );
 
