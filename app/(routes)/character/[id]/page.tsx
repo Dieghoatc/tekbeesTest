@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { getCharacterById } from "@/app/libs/api/service/getCharacterById";
 import { getMultipleEpisodes } from "@/app/libs/api/service/getMultipleEpisodes";
-import { groupEpisodesBySeason } from "@/app/libs/api/service/groupEpisodesBySeason";
+import { groupEpisodesBySeason } from "@/app/libs/helpers/groupEpisodesBySeason";
 
 interface CharacterProps {
   params: Promise<{ id: string }>;

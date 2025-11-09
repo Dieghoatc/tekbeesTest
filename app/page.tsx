@@ -1,5 +1,6 @@
 import { Characters } from "./sections/Characters";
 import { Filters } from "./components/Filters";
+import Link from "next/link";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ search: string; status: string; gender: string }> }) {
   const searchParamsResolved = await searchParams;
@@ -15,6 +16,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
 
       <div className="w-full p-4">
         <Filters search={search} status={status} gender={gender} />
+      </div>
+      <div className="w-full p-4">
+        <Link href="/favorites" className="bg-purple-800 text-white p-2 rounded">Favoritos</Link>
       </div>
 
       <div className="md:m-4 mx-2">
