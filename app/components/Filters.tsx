@@ -34,6 +34,10 @@ export function Filters({ search, status, gender }: FilterProps) {
         updateURL({ search: debounceSearch });
     }, [debounceSearch]);
 
+    useEffect(() => {
+        router.replace("/", { scroll: false });
+    }, []);
+
     return (
         <div className="flex flex-col gap-4">
             <div className="">
