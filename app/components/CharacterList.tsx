@@ -5,7 +5,7 @@ import { Result } from "../libs/api/types/rickAndMortyTypes"
 import { characterFilter } from '../libs/helpers/characterFilter';
 import { CharacterCard } from "./CharacterCard";
 import { getCharacters } from "../libs/api/service/getCharacters";
-import { Loader } from "./ui/loader";
+import Link from "next/link";
 
 interface CharacterListProps {
   search: string;
@@ -60,13 +60,15 @@ export function CharacterList({ search, status, gender }: CharacterListProps) {
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {filteredCharacters.map((character: Result) => (
           <li key={character.id}>
-            <CharacterCard character={character} />
+            <Link href={`/character/${character.id}`}>
+              <CharacterCard character={character} />
+            </Link>
           </li>
         ))}
       </ul>
 
       <div ref={triggerRef} className="h-8 flex justify-center items-center">
-        <Loader />
+
       </div>
     </section>
   );
