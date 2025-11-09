@@ -22,7 +22,9 @@ export default async function Character({
     return ids;
   }
 
-  const episodes = await getMultipleEpisodes(groupIdEpisodes(character.episode));
+  const episodesResponse = await getMultipleEpisodes(groupIdEpisodes(character.episode));
+  const episodes = Array.isArray(episodesResponse) ? episodesResponse : [episodesResponse];
+
 
   const groupEpisodesBySeasons = Object.entries(groupEpisodesBySeason(episodes));
 
