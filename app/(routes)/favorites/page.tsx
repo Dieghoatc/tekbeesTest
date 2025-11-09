@@ -1,7 +1,5 @@
-export default function Favorites() {
-    return (
-        <div>
-            <h1>Favorites</h1>
-        </div>
-    );
+import FavoritePageClient from "./FavoritePageClient";
+
+export default function Page() {
+  return <FavoritePageClient />;
 }
