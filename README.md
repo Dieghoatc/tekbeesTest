@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tekbess Technical Test - Rick and Morty API
+
+This project is a technical test for Tekbess. It consumes the [Rick and Morty API](https://rickandmortyapi.com/) to display characters and their details. Built with React/Next.js (adjust according to your stack) and includes unit tests.
+
+---
+
+## Features
+
+- Fetch and display characters from the Rick and Morty API
+- View character details
+- Favorite characters
+- Basic error handling and loading states
+- Unit tests included
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a copy of the project up and running locally.
+
+### Prerequisites
+
+- Node.js (>= 18.x recommended)
+- npm
+
+### Clone the repository
 
 ```bash
+git clone https://github.com/your-username/tekbess-rick-and-morty.git
+cd tekbess-rick-and-morty
+
+### Install dependencies
+npm install
+
+### Run the project
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build the project
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run the project in production
+npm run start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run tests
+npm run test
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Author
+Diego Armando Tejedor Cortés
+Bogotá, Colombia
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
