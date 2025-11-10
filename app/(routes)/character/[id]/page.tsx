@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { getCharacterById } from "@/app/libs/api/service/getCharacterById";
 import { getMultipleEpisodes } from "@/app/libs/api/service/getMultipleEpisodes";
-import { groupEpisodesBySeason } from "@/app/libs/api/service/groupEpisodesBySeason";
+import { groupEpisodesBySeason } from "@/app/libs/helpers/groupEpisodesBySeason";
 
 interface CharacterProps {
   params: Promise<{ id: string }>;
@@ -22,11 +22,10 @@ export default async function Character({
     return ids;
   }
 
-  const episodes = await getMultipleEpisodes(groupIdEpisodes(character.episode));
+  const episodesResponse = await getMultipleEpisodes(groupIdEpisodes(character.episode));
+  const episodes = Array.isArray(episodesResponse) ? episodesResponse : [episodesResponse];
 
   const groupEpisodesBySeasons = Object.entries(groupEpisodesBySeason(episodes));
-
-  console.log(groupEpisodesBySeasons)
 
   return (
     <section className="w-full flex flex-col items-center mt-4">

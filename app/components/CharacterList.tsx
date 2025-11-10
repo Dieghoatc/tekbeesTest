@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Result } from "../libs/api/types/rickAndMortyTypes"
 import { characterFilter } from '../libs/helpers/characterFilter';
 import { CharacterCard } from "./CharacterCard";
-import { getCharacters } from "../libs/api/service/getCharacters";
-import Link from "next/link";
+  import { getCharacters } from "../libs/api/service/getCharacters";
 
 interface CharacterListProps {
   search: string;
@@ -60,9 +59,7 @@ export function CharacterList({ search, status, gender }: CharacterListProps) {
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {filteredCharacters.map((character: Result) => (
           <li key={character.id}>
-            <Link href={`/character/${character.id}`}>
-              <CharacterCard character={character} />
-            </Link>
+            <CharacterCard character={character} />
           </li>
         ))}
       </ul>
