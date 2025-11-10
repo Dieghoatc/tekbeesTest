@@ -14,7 +14,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rick adn Morty TekBees Test",
-  description: "Technical test for TekBees",
+  description: "Technical test for TekBees consumint Rick and Morty API",
+  keywords: ["Rick and Morty", "TekBees", "Technical test"],
+  authors: [
+    {
+      name: "Diego Armando Tejedor Cortés",
+      url: "https://github.com/dieghoatc",
+    },
+  ],
+  publisher: "Diego Armando Tejedor Cortés",
 };
 
 export default function RootLayout({
